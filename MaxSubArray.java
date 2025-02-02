@@ -1,3 +1,7 @@
+/*
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
+ */
+
 public class MaxSubArray {
     public int maxSubArray(int[] nums) {
         int sum = 0;
@@ -12,3 +16,9 @@ public class MaxSubArray {
         return res;
     }
 }
+
+/*
+Kadane's Algorithm
+Time Complexity: O(n)
+Space Complexity: O(1)
+ */
