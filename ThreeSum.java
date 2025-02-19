@@ -8,6 +8,7 @@ public class ThreeSum {
         for(int i = 0; i < nums.length; i++){
             if(nums[i] > 0)
                 break;
+            //To avoid duplicate triplets
             if(i > 0 && nums[i] == nums[i-1])
                 continue;
             int l = i + 1, r = nums.length - 1;
@@ -21,6 +22,7 @@ public class ThreeSum {
                     res.add(Arrays.asList(nums[i], nums[l], nums[r]));
                     l++;
                     r--;
+                    //To avoid 2nd element duplicate triplets
                     while(l < r && nums[l] == nums[l - 1]){
                         l++;
                     }
@@ -30,3 +32,8 @@ public class ThreeSum {
         return res;
     }
 }
+
+/*
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+ */
