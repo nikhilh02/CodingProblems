@@ -24,6 +24,7 @@ public class ArrayProductExceptSelf {
             answer[i] = answer[i] * postfix;
             postfix = postfix * nums[i];
         }
+
         return answer;
     }
 }
