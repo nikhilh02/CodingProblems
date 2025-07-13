@@ -19,7 +19,7 @@ public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         int diff = 0;
-        Map<Integer, Integer> seen = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> seen = new HashMap<>();
         for(int i = 0; i < len; i++){
             diff = target - nums[i];
             if(seen.containsKey(diff)){
