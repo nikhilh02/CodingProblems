@@ -23,6 +23,6 @@ public class Subsets {
 }
 
 /*
-Time Complexity: O(2^n)
+Time Complexity: O(N * 2^N)
 Space Complexity: O(n)
  */
