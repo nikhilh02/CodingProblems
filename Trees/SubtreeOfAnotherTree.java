@@ -15,33 +15,33 @@ import java.util.LinkedList;
  *     }
  * }
  */
+
 class SubtreeOfAnotherTree {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if(root == null || subRoot == null)
-            return false;
+        if (subRoot == null) return true;
+        if (root == null) return false;
+
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             TreeNode node = q.poll();
-            if(node == null)
-                continue;
-            if(node.val == subRoot.val)
-                return isSame(node, subRoot);
+            if (node == null) continue;
+
+            if (isSameTree(node, subRoot)) return true;
+
             q.add(node.left);
             q.add(node.right);
         }
+
         return false;
     }
 
-    boolean isSame(TreeNode a, TreeNode b){
-        if(a == null && b == null)
-            return true;
-        if(a == null || b == null)
-            return false;
-        if(a.val != b.val)
-            return false;
+    private boolean isSameTree(TreeNode a, TreeNode b) {
+        if (a == null && b == null) return true;
+        if (a == null || b == null) return false;
+        if (a.val != b.val) return false;
 
-        return isSame(a.left, b.left) && isSame(a.right, b.right);
+        return isSameTree(a.left, b.left) && isSameTree(a.right, b.right);
     }
 }
